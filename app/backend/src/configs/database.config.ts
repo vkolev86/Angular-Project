@@ -1,7 +1,7 @@
 import {connect, ConnectOptions} from 'mongoose';
 
 export const dbConnect = () => {
-    connect('mongodb://localhost:27017/foods', {
+    connect('mongodb+srv://vasilsl:!ADmin!03@cluster0.eps4csp.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     } as ConnectOptions).then(
