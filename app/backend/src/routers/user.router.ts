@@ -1,24 +1,11 @@
 import {Router} from 'express';
-import { sample_users } from '../data';
+import { v4 as uuidv4 } from 'uuid';
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import { User, UserModel } from '../models/user.model';
 import { HTTP_BAD_REQUEST } from '../constants/http_status';
 import bcrypt from 'bcryptjs';
 const router = Router();
-
-router.get("/seed", asyncHandler(
-  async (req, res) => {
-     const usersCount = await UserModel.countDocuments();
-     if(usersCount> 0){
-       res.send("Seed is already done!");
-       return;
-     }
- 
-     await UserModel.create(sample_users);
-     res.send("Seed Is Done!");
- }
- ))
 
 router.post("/login", asyncHandler(
   async (req, res) => {
@@ -48,7 +35,7 @@ router.post('/register', asyncHandler(
     const encryptedPassword = await bcrypt.hash(password, 10);
 
     const newUser:User = {
-      _id: 'tn6u6umm',
+      _id: uuidv4(),
       name,
       email: email.toLowerCase(),
       password: encryptedPassword,
