@@ -31,11 +31,15 @@ export class UserService {
           this.userSubject.next(user);
           this.toastrService.success(
             `Welcome back ${user.name}!`,
-            'Login Successful'
+            'Login Successful', {
+              positionClass: 'toast-top-right' 
+           }
           )
         },
         error: (errorResponse) => {
-          this.toastrService.error(errorResponse.error, 'Login Failed');
+          this.toastrService.error(errorResponse.error, 'Login Failed', {
+            positionClass: 'toast-top-right' 
+         });
         }
       })
     );
@@ -49,12 +53,16 @@ export class UserService {
           this.userSubject.next(user);
           this.toastrService.success(
             `Welcome ${user.name}`,
-            'Register Successful'
+            'Register Successful', {
+              positionClass: 'toast-top-right' 
+           }
           )
         },
         error: (errorResponse) => {
           this.toastrService.error(errorResponse.error,
-            'Register Failed')
+            'Register Failed', {
+              positionClass: 'toast-top-right' 
+           })
         }
       })
     )
