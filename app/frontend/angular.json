@@ -125,7 +125,7 @@
       }
     }
   },
-  "defaultProject": "frontend",
+  "defaultProject": "app",
   "cli": {
     "analytics": "ab8a2b4a-c75d-476d-992e-5b4cef76cb83"
   }
