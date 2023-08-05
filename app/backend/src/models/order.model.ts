@@ -29,7 +29,6 @@ export const OrderItemSchema = new Schema<OrderItem>(
 );
 
 export interface Order{
-    id:string;
     items: OrderItem[];
     totalPrice:number;
     name: string;

@@ -18,11 +18,11 @@ asyncHandler(async (req:any, res:any) => {
     }
 
     await OrderModel.deleteOne({
-        user: req.user.id,
+        user: req.user._id,
         status: OrderStatus.NEW
     });
 
-    const newOrder = new OrderModel({...requestOrder,user: req.user.id});
+    const newOrder = new OrderModel({...requestOrder,user: req.user._id});
     await newOrder.save();
     res.send(newOrder);
 })
@@ -51,12 +51,12 @@ router.post('/pay', asyncHandler( async (req:any, res) => {
 }))
 
 router.get('/track/:id', asyncHandler( async (req, res) => {
-    const order = await OrderModel.findById(req.params.id);
+    const order = await OrderModel.findById(req.params._id);
     res.send(order);
 }))
 
 export default router;
 
 async function getNewOrderForCurrentUser(req: any) {
-    return await OrderModel.findOne({ user: req.user.id, status: OrderStatus.NEW });
+    return await OrderModel.findOne({ user: req.user._id, status: OrderStatus.NEW });
 }
