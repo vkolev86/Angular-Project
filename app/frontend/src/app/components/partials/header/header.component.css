@@ -2,7 +2,7 @@ header{
   position: relative;
   background: white;
   padding: 0;
-  border-bottom: 1px solid #e72929;
+  border-bottom: 1px solid #1f32fd;
 }
 
 a{
@@ -10,7 +10,7 @@ a{
 }
 
 a:hover{
-  background:#e72929;
+  background:#1f32fd;
   color: white;
   cursor: pointer;
 }
@@ -38,7 +38,7 @@ ul a{
 }
 
 a span{
-  background: #ff4d4d;
+  background: #1f32fd;
   color: white;
   padding: 0.1rem 0.45rem;
   border-radius: 100rem;

@@ -11,7 +11,7 @@ ul{
   flex-direction: column;
   flex:3 0;
   justify-content: space-evenly;
-  border: 1px solid #ffbbbb;
+  border: 1px solid #1f32fd;
   border-radius: 1rem;
   list-style: none;
   margin: 0.5rem;
@@ -23,7 +23,7 @@ ul li{
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid #1f32fd;
 }
 
 ul li:last-child{
@@ -58,7 +58,8 @@ li .remove-button{
   border-radius: 1rem;
   border: none;
   padding: 0.5rem;
-  color: #e72929;
+  color: #ffffff;
+  background-color: #ff0000;
   opacity: 0.7;
   outline: none;
 }
@@ -75,7 +76,7 @@ li .remove-button:hover{
   align-items: center;
   flex:1 3;
   height: 20rem;
-  border: 1px solid #ffbbbb;
+  border: 1px solid #1f32fd;
   border-radius: 1rem;
   padding: 0.5rem;
   margin: 0.5rem;
@@ -108,7 +109,7 @@ li .remove-button:hover{
 .checkout a{
   padding: 1rem;
   color: white;
-  background:#e72929;
+  background:#1f32fd;
   display: block;
   width: 99%;
   border-radius: 1rem;

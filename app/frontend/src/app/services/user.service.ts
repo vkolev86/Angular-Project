@@ -30,7 +30,7 @@ export class UserService {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Welcome to Foodmine ${user.name}!`,
+            `Welcome back ${user.name}!`,
             'Login Successful'
           )
         },
@@ -48,7 +48,7 @@ export class UserService {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
-            `Welcome to the Foodmine ${user.name}`,
+            `Welcome ${user.name}`,
             'Register Successful'
           )
         },
