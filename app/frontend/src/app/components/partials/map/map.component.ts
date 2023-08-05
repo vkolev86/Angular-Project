@@ -20,7 +20,7 @@ export class MapComponent implements OnChanges {
     iconSize: [42, 42],
     iconAnchor: [21, 42],
   });
-  private readonly DEFAULT_LATLNG: LatLngTuple = [13.75, 21.62];
+  private readonly DEFAULT_LATLNG: LatLngTuple = [42.73, 25.48];
 
   @ViewChild('map', {static:true})
   mapRef!: ElementRef;
@@ -58,7 +58,7 @@ export class MapComponent implements OnChanges {
 
     this.map = map(this.mapRef.nativeElement, {
       attributionControl: false
-    }).setView(this.DEFAULT_LATLNG, 1);
+    }).setView(this.DEFAULT_LATLNG, 7);
 
     tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(this.map);
 
