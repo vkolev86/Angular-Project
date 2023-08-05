@@ -99,7 +99,6 @@
         2. Add Logout Method
            1. Add to Header
 
-
 10. Make Components For Login Page
     1. Input Container
     2. Input Validation
@@ -109,12 +108,7 @@
 11. Connect Login API To MongoDB
     1. Moving Apis into routers
     2. Create MongoDB
-    3. Install
-       1. mongoose
-       2. dotenv
-       3. bcryptjs
-       4. express-async-handler
-    4. Connect to MongoDB
+    3. Connect to MongoDB
 
 12. Register User
     1.  Add Register api
@@ -122,15 +116,11 @@
     3.  Add Register link 
     4.  Add Register Component
 
-
 13. Loading!
     1.  Add Image 
     2.  Add Component
     3.  Add Service
     4.  Add Interceptor
-
-
-
 
 14. Checkout Page
     1.  Create Order Model
