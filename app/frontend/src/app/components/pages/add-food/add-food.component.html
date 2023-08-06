@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="details">
+      <app-title title="Add New Food"></app-title>
+      <form [formGroup]="addFoodForm" (ngSubmit)="submit()">
+        <text-input
+        [control]="fc.name"
+        [showErrorsWhen]="isSubmitted"
+        label="Name of food *">
+      `</text-input>
+
+      <text-input
+      [control]="fc.price"
+      [showErrorsWhen]="isSubmitted"
+      label="Price *">
+    `</text-input>
+  
+      <text-input
+      [control]="fc.tags"
+      [showErrorsWhen]="isSubmitted"
+      label="Tags *">
+    `</text-input>
+  
+    <text-input
+      [control]="fc.favorite"
+      [showErrorsWhen]="isSubmitted"
+      label="Favorite">
+    `</text-input>
+
+    <text-input
+      [control]="fc.stars"
+      [showErrorsWhen]="isSubmitted"
+      label="Stars">
+    `</text-input>
+
+    <text-input
+    [control]="fc.imageUrl"
+    [showErrorsWhen]="isSubmitted"
+    label="Food image *">
+  `</text-input>
+  
+  <text-input
+  [control]="fc.origins"
+  [showErrorsWhen]="isSubmitted"
+  label="Countries *">
+  `</text-input>
+  
+  <text-input
+  [control]="fc.cookTime"
+  [showErrorsWhen]="isSubmitted"
+  label="Coocking time *">
+  `</text-input>
+  
+  <default-button text="SUBMIT"></default-button>
+  
+      </form>
+    </div>
+  </div>
+  
