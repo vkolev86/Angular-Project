@@ -1,7 +1,6 @@
 import {Schema, model} from 'mongoose';
 
 export interface Food{
-    id:string;
     name:string;
     price:number;
     tags: string[];
@@ -18,7 +17,7 @@ export const FoodSchema = new Schema<Food>(
         price: {type: Number, required:true},
         tags: {type: [String]},
         favorite: {type: Boolean, default:false},
-        stars: {type: Number, required:true},
+        stars: {type: Number, default:5},
         imageUrl: {type: String, required:true},
         origins: {type: [String], required:true},
         cookTime: {type: String, required:true}
