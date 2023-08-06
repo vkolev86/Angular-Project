@@ -24,6 +24,7 @@ export class LoginPageComponent implements OnInit {
     });
 
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+    
   }
 
   get fc(){
