@@ -1,7 +1,8 @@
 import {Router} from 'express';
+import { v4 as uuidv4 } from 'uuid';
 import { sample_foods, sample_tags } from '../data';
 import asyncHandler from 'express-async-handler';
-import { FoodModel } from '../models/food.model';
+import { Food, FoodModel } from '../models/food.model';
 
 const router = Router();
 
@@ -79,5 +80,24 @@ router.get("/:foodId", asyncHandler(
   }
 ))
 
+router.post('/add', asyncHandler(
+  async (req, res) => {
+    const {name, price, tags, favorite, stars, imageUrl, origins, cookTime} = req.body;
+
+    const newFood:Food = {
+      name,
+      price,
+      tags,
+      favorite,
+      stars,
+      imageUrl,
+      origins,
+      cookTime
+    }
+
+    const dbFood = await FoodModel.create(newFood);
+    res.send(dbFood);
+  }
+))
 
 export default router;
