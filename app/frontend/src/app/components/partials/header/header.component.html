@@ -10,14 +10,17 @@
           </a>
         </li>
         <li *ngIf="!isAuth">
-          <a routerLink="/login">LOGIN</a>
+          <a routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!isAuth">
+          <a routerLink="/register">Register</a>
         </li>
         <li *ngIf="isAuth && isAdmin">
           <a routerLink="/addFood">Add new food</a>
         </li>
         <li *ngIf="isAuth" class="menu-container">
-          <a (click)="logout()">Logout</a>
           <a routerLink="/">{{user.name}} <span *ngIf="isAuth && isAdmin">ADMIN</span></a>
+          <a (click)="logout()">Logout</a>
         </li>
         
       </ul>
