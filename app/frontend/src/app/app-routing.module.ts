@@ -9,12 +9,14 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { AddFoodComponent } from './components/pages/add-food/add-food.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent },
   { path: 'tag/:tag', component: HomeComponent },
   {path:'food/:id', component:FoodPageComponent},
+  {path:'addFood', component: AddFoodComponent, canActivate:[AuthGuard]},
   {path:'cart-page', component: CartPageComponent},
   {path:'login', component: LoginPageComponent},
   {path:'register', component: RegisterPageComponent},
