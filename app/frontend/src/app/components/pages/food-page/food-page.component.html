@@ -42,6 +42,8 @@
     </div>
 
     <button (click)="addToCart()">Add To Cart</button>
+    <br/>
+    <button class="delete" *ngIf="isAuth && isAdmin" (click)="deleteFood()">Delete Food</button>
 
   </div>
 </div>

@@ -8,6 +8,8 @@ import { IUserRegister } from '../shared/interfaces/IUserRegister';
 import { User } from '../shared/models/User';
 
 const USER_KEY = 'User';
+const USER_CART = 'Cart';
+const PAYPAL = '__paypal_storage__';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +26,8 @@ export class UserService {
   }
 
   login(userLogin:IUserLogin):Observable<User>{
+    localStorage.removeItem(USER_CART);
+    localStorage.removeItem(PAYPAL);
     return this.http.post<User>(USER_LOGIN_URL, userLogin).pipe(
       tap({
         next: (user) =>{
@@ -46,6 +50,8 @@ export class UserService {
   }
 
   register(userRegiser:IUserRegister): Observable<User>{
+    localStorage.removeItem(USER_CART);
+    localStorage.removeItem(PAYPAL);
     return this.http.post<User>(USER_REGISTER_URL, userRegiser).pipe(
       tap({
         next: (user) => {
@@ -72,6 +78,8 @@ export class UserService {
   logout(){
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(USER_CART);
+    localStorage.removeItem(PAYPAL);
     window.location.reload();
   }
 
