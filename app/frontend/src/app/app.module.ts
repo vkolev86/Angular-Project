@@ -31,6 +31,8 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
 import { AddFoodComponent } from './components/pages/add-food/add-food.component';
+import { DeleteFoodComponent } from './components/pages/delete-food/delete-food.component';
+import { EditFoodComponent } from './components/pages/edit-food/edit-food.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,9 @@ import { AddFoodComponent } from './components/pages/add-food/add-food.component
     PaypalButtonComponent,
     OrderTrackPageComponent,
     StarRatingComponent,
-    AddFoodComponent
+    AddFoodComponent,
+    DeleteFoodComponent,
+    EditFoodComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,7 @@ import { AddFoodComponent } from './components/pages/add-food/add-food.component
     ReactiveFormsModule,
     ToastrModule.forRoot({
       timeOut:3000,
-      positionClass:'toast-bottom-right',
+      positionClass:'toast-top-right',
       newestOnTop:false
     })
   ],

@@ -19,6 +19,7 @@ app.use(cors({
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
+app.use("/api/delete", foodRouter);
 
 app.use(express.static('public'));
 app.get('*', (req, res) => {

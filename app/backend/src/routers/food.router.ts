@@ -80,6 +80,13 @@ router.get("/:foodId", asyncHandler(
   }
 ))
 
+router.delete("/:foodId", asyncHandler(
+  async (req, res) => {
+    const food = await FoodModel.findByIdAndDelete(req.params.foodId);
+    res.send(food);
+  }
+))
+
 router.post('/add', asyncHandler(
   async (req, res) => {
     const {name, price, tags, favorite, stars, imageUrl, origins, cookTime} = req.body;
