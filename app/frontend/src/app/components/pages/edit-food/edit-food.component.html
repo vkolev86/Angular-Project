@@ -2,6 +2,7 @@
     <div class="details">
       <app-title title="Edit Food"></app-title>
       <form [formGroup]="editFoodForm" (ngSubmit)="submit()">
+
         <text-input
         [control]="fc.name"
         [showErrorsWhen]="isSubmitted"
@@ -18,18 +19,6 @@
       [control]="fc.tags"
       [showErrorsWhen]="isSubmitted"
       label="Tags *">
-    `</text-input>
-  
-    <text-input
-      [control]="fc.favorite"
-      [showErrorsWhen]="isSubmitted"
-      label="Favorite">
-    `</text-input>
-
-    <text-input
-      [control]="fc.stars"
-      [showErrorsWhen]="isSubmitted"
-      label="Stars">
     `</text-input>
 
     <text-input

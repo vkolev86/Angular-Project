@@ -10,14 +10,16 @@ import { Order } from 'src/app/shared/models/Order';
 })
 export class OrderTrackPageComponent implements OnInit {
 
-  order!:Order;
+  // order!:Order;
+  order: any[] = [];
   constructor(activatedRoute: ActivatedRoute,
               orderService:OrderService) {
      const params = activatedRoute.snapshot.params;
      if(!params.orderId) return;
-
      orderService.trackOrderById(params.orderId).subscribe(order => {
-       this.order = order;
+      //  this.order = order;
+      this.order.push(order);
+       console.log(this.order);
      })
 
   }

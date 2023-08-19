@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { sample_foods, sample_tags } from 'src/data';
-import { FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAGS_URL, FOODS_URL, FOOD_BY_ID_URL, ADD_FOOD_URL } from '../shared/constants/urls';
+import { FOODS_BY_SEARCH_URL, FOODS_BY_TAG_URL, FOODS_TAGS_URL, FOODS_URL, FOOD_BY_ID_URL, ADD_FOOD_URL, EDIT_FOOD_BY_ID_URL } from '../shared/constants/urls';
 import { Food } from '../shared/models/Food';
 import { Tag } from '../shared/models/Tag';
 import { INewFood } from '../shared/interfaces/INewFood';
@@ -61,6 +60,10 @@ export class FoodService {
         }
       })
     )
+  }
+
+  editFood(foodId:string):Observable<Food>{
+    return this.http.get<Food>(EDIT_FOOD_BY_ID_URL + foodId);
   }
 
   private getFoodFromLocalStorage():Food{

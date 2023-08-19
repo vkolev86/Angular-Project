@@ -19,7 +19,7 @@
           <a routerLink="/addFood">Add new food</a>
         </li>
         <li *ngIf="isAuth" class="menu-container">
-          <a routerLink="/">{{user.name}} <span *ngIf="isAuth && isAdmin">ADMIN</span></a>
+          <a routerLink="/track/{{user.id}}">{{user.name}} <span *ngIf="isAuth && isAdmin">ADMIN</span></a>
           <a (click)="logout()">Logout</a>
         </li>
         

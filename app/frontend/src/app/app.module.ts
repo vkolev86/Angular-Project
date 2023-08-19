@@ -33,6 +33,8 @@ import { StarRatingComponent } from './components/partials/star-rating/star-rati
 import { AddFoodComponent } from './components/pages/add-food/add-food.component';
 import { DeleteFoodComponent } from './components/pages/delete-food/delete-food.component';
 import { EditFoodComponent } from './components/pages/edit-food/edit-food.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +70,7 @@ import { EditFoodComponent } from './components/pages/edit-food/edit-food.compon
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     ToastrModule.forRoot({
       timeOut:3000,
       positionClass:'toast-top-right',

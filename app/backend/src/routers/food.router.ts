@@ -107,4 +107,24 @@ router.post('/add', asyncHandler(
   }
 ))
 
+router.post('/:foodId', asyncHandler(
+  async (req, res) => {
+    const {id, name, price, tags, favorite, stars, imageUrl, origins, cookTime} = req.body;
+
+    const newFood:Food = {
+      name,
+      price,
+      tags,
+      favorite,
+      stars,
+      imageUrl,
+      origins,
+      cookTime
+    }
+
+    const dbFood = await FoodModel.findByIdAndUpdate(id, newFood);
+    res.send(dbFood);
+  }
+))
+
 export default router;

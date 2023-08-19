@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { FoodService } from 'src/app/services/food.service';
 import { Food } from 'src/app/shared/models/Food';
+import { DeleteService } from 'src/app/services/delete.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/User';
 
@@ -15,8 +16,9 @@ import { User } from 'src/app/shared/models/User';
 export class FoodPageComponent implements OnInit {
   food!: Food;
   user!:User;
-  constructor(activatedRoute:ActivatedRoute, foodService:FoodService,
-    private cartService:CartService, private router: Router, private userService:UserService) {
+  editService: any;
+  constructor(activatedRoute:ActivatedRoute, private foodService:FoodService,
+    private cartService:CartService, private deleteService: DeleteService, private router: Router, private userService:UserService) {
     activatedRoute.params.subscribe((params) => {
       if(params.id)
       foodService.getFoodById(params.id).subscribe(serverFood => {
@@ -42,9 +44,14 @@ export class FoodPageComponent implements OnInit {
     this.cartService.addToCart(this.food);
     this.router.navigateByUrl('/cart-page');
   }
+ 
   deleteFood(){
-    this.cartService.addToCart(this.food);
-    this.router.navigateByUrl('/delete');
+    this.deleteService.deleteFood(this.food.id).subscribe(() => console.log("food is deleted!"));
+    this.router.navigateByUrl('/delete/'+ this.food.id);
   }
 
+  editFood(){
+    // this.editService.editFood(this.food.id);
+    this.router.navigateByUrl('/editFood/'+ this.food.id);
+  }
 }

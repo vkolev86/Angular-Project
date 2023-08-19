@@ -47,11 +47,11 @@ router.post('/pay', asyncHandler( async (req:any, res) => {
     order.status = OrderStatus.PAYED;
     await order.save();
 
-    res.send(order._id);
+    res.send(order.id);
 }))
 
 router.get('/track/:id', asyncHandler( async (req, res) => {
-    const order = await OrderModel.findById(req.params._id);
+    const order = await OrderModel.find({user: req.params.id});
     res.send(order);
 }))
 
